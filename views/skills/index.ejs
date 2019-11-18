@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>MY SKILLS EXPRESS</title>
+    <title>My Skills</title>
 </head>
 <body>
-
+    <h1>This is the index of skills folder</h1>
     <ul>
-    <% skills.forEach(function(s, idx){ %>
-        <li>
-
-                <a href="/skills/<%= idx%>"%> </a><%= s.skill %></a>
-                - 
-              <%= s.done ? 'done' : 'not done' %>
-           
-        </li>
-        <%});%>
+        <% skills.forEach(function( s , idx){ %>
+            <li>
+                <form action="/skills/<%= idx %>?_method=DELETE"
+                method="POST" class="delete-form"
+                >
+                    <button type="submit">X</button>
+                </form>
+                <a href="/skills/<%= idx %>"> <%= s.skill %> </a>
+            </li>
+        <% }) %>
     </ul>
-    
+    <a href="skills/add">Add Skills</a>
+        
 </body>
 </html>

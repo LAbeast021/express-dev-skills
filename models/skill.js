@@ -1,24 +1,29 @@
-const mySkills = [
-    {skill: 'Data analytics', done: true},
-    {skill: 'Data modeling', done: false},
-    {skill: 'Information technology', done: false}
-  ];
+var mySkills = [
+  {skill: 'Programming', done: true},
+  {skill: 'Data analytics', done: false},
+  {skill: 'Data modeling', done: false},
+  
+];
 
-  module.exports = {
-    allSkills,
-    eachSkill
-  };
+module.exports = {
+  allSkills , 
+  oneSkill , 
+  adding ,
+  deleteSkill
+}
+function deleteSkill(id){
+  mySkills.splice(id , 1)
+}
 
-  function allSkills(){
-    return mySkills;
-  };
+function adding (skill){
+  mySkills.push(skill)
+}
 
+function allSkills(){
+  return mySkills
+};
 
-  function eachSkill(idx){
-    return mySkills[idx];
-  };
-
-
-
-
+function oneSkill(id){
+  return mySkills[id]
+};
   
